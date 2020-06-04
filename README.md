@@ -25,3 +25,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 $ docker-compose run web mix ecto.gen.migration create_addresses
 $ docker-compose run web mix ecto.migrate 
 ```
+
+iexを使ってシードデータを作成
+```
+$ docker-compose run web iex -S mix
+
+```
