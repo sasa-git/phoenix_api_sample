@@ -3,7 +3,7 @@ defmodule PhoenixApiSampleWeb.Address do
 
   alias PhoenixApiSampleWeb.Address
 
-  schema "address" do
+  schema "addresses" do
     field :name, :string
 
     timestamps()
