@@ -5,6 +5,7 @@ defmodule PhoenixApiSampleWeb.AddressController do
   def index(conn, _params) do
     addresses = PhoenixApiSample.Repo.all(Address)
 
-    render conn, address: addresses
+    render conn, data: addresses
+    # data: addressesの部分は`view`での引数と同じ形式になる
   end
 end

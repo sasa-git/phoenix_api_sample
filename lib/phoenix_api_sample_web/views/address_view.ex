@@ -1,7 +1,8 @@
 defmodule PhoenixApiSampleWeb.AddressView do
   use PhoenixApiSampleWeb, :view
 
-  def render("index.json", %{address: addresses}) do
+  # ここの%{data: addresses}がcontrollerでのrenderで指定した形と同じ形式になる。つまり一致してないとダメ(多分)
+  def render("index.json", %{data: addresses}) do
     %{
       address: Enum.map(addresses, &address_json/1)
     }
