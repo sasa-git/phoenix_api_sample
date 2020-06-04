@@ -71,4 +71,34 @@ SELECT a0.`id`, a0.`name`, a0.`inserted_at`, a0.`updated_at` FROM `addresses` AS
   name: "Tokyo",
   updated_at: ~N[2020-06-04 11:34:35]
 }
+
+# 全件取得
+iex(1)> PhoenixApiSample.Repo.all(PhoenixApiSampleWeb.Address)   
+[debug] QUERY OK source="addresses" db=0.4ms decode=28.0ms queue=25.1ms idle=1182.2ms
+SELECT a0.`id`, a0.`name`, a0.`inserted_at`, a0.`updated_at` FROM `addresses` AS a0 []
+[
+  %PhoenixApiSampleWeb.Address{
+    __meta__: #Ecto.Schema.Metadata<:loaded, "addresses">,
+    id: 1,
+    inserted_at: ~N[2020-06-04 11:34:35],
+    name: "Tokyo",
+    updated_at: ~N[2020-06-04 11:34:35]
+  },
+  %PhoenixApiSampleWeb.Address{
+    __meta__: #Ecto.Schema.Metadata<:loaded, "addresses">,
+    id: 2,
+    inserted_at: ~N[2020-06-04 11:38:18],
+    name: "Osaka",
+    updated_at: ~N[2020-06-04 11:38:18]
+  },
+  %PhoenixApiSampleWeb.Address{
+    __meta__: #Ecto.Schema.Metadata<:loaded, "addresses">,
+    id: 3,
+    inserted_at: ~N[2020-06-04 11:38:22],
+    name: "Nara",
+    updated_at: ~N[2020-06-04 11:38:22]
+  }
+]
 ```
+
+多分、xxWebはそのアプリ特有のもの、xxだけだとPhoenix自体の機能を使っている感じ?

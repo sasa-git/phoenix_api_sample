@@ -1,9 +1,10 @@
 defmodule PhoenixApiSampleWeb.AddressController do
   use PhoenixApiSampleWeb, :controller
+  alias PhoenixApiSampleWeb.Address
 
   def index(conn, _params) do
-    map = %{1 => "Tokyo", 2 => "Osaka", 3 => "Nara"}
+    addresses = PhoenixApiSample.Repo.all(Address)
 
-    render conn, address: map
+    render conn, address: addresses
   end
 end
